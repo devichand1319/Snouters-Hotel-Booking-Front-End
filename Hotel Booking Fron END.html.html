@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NERO Hotel Booking</title>
+<style>
+  /* CSS styles for the hotel booking form */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  label {
+    font-weight: bold;
+  }
+  input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2><span style="color: red; font-weight: bold;">NERO Hotel</span> Booking Form</h2>
+  <form id="bookingForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <label for="checkin">Check-in Date:</label>
+    <input type="date" id="checkin" name="checkin" required>
+    <label for="checkout">Check-out Date:</label>
+    <input type="date" id="checkout" name="checkout" required>
+    <input type="submit" value="Book Now">
+  </form>
+</div>
+
+<script>
+  // JavaScript code for form submission
+  document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    // Retrieve form data
+    var formData = new FormData(this);
+    // Process the form data (you can send it to the server or perform client-side validation)
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ': ' + pair[1]);
+    }
+    // Display a confirmation message (you can customize this)
+    alert("Thank you for booking with NERO Hotel!");
+    // You can redirect the user to another page after successful booking
+    // window.location.href = "confirmation.html";
+  });
+</script>
+</body>
+</html>
