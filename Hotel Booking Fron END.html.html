@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NERO'S HOTEL Booking</title>
+<title>NERO'S HOTEL - Login</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* CSS styles for the background image and form */
@@ -30,13 +30,13 @@
     text-align: center; /* Center the text */
   }
   .booking {
-    color: blue; /
+    color: blue;
   }
   label {
     font-weight: bold;
     display: block; /* Display labels as block elements to place each on a new line */
   }
-  input[type="text"], input[type="date"], input[type="number"], input[type="email"], select {
+  input[type="text"], input[type="password"], select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px; /* Add bottom margin to create space between form elements */
@@ -60,42 +60,30 @@
 </head>
 <body>
 <div class="container">
-  <h1>NERO'S HOTEL <span class="booking">Booking</span></h1>
-  <form id="bookingForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email Address:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="checkin">Check-in Date:</label>
-    <input type="date" id="checkin" name="checkin" required>
-    <label for="checkout">Check-out Date:</label>
-    <input type="date" id="checkout" name="checkout" required>
-    <label for="guests">No. of Guests:</label>
-    <input type="number" id="guests" name="guests" min="1" required>
-    <label for="roomtype">Room Type:</label>
-    <select id="roomtype" name="roomtype" required>
-      <option value="">Select Room Type</option>
-      <option value="suite">Suite Room</option>
-      <option value="deluxe">Deluxe Room</option>
-      <option value="single">Single Room</option>
-    </select>
-    <input type="submit" value="Book Now">
+  <h1>NERO'S HOTEL <span class="booking">Login</span></h1>
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" value="Sign In">
   </form>
+  <p style="text-align:center;">or</p>
+  <button onclick="location.href='signup.html';">Sign Up</button>
 </div>
 
 <script>
-  // JavaScript code for form submission
-  document.getElementById("bookingForm").addEventListener("submit", function(event) {
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
-    // Retrieve form data
-    var formData = new FormData(this);
-    // Process the form data (you can send it to the server or perform client-side validation)
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ': ' + pair[1]);
-    }
-    // Redirect the user to another page after successful booking
-    window.location.href = "file:///C:/Users/hp/Downloads/test3.html";
+    // Retrieve username and password
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    // Check if username and password are valid (you can add validation logic here)
+    // For demonstration purposes, assuming the login is successful
+    // Redirect to the next page (replace 'x_file.html' with your file path)
+    window.location.href = "C:/Users/hp/Downloads/test2.html";
   });
 </script>
+
 </body>
 </html>
